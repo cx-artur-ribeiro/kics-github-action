@@ -24,9 +24,15 @@ function createComment(results, withQueries = false, excludedColumnsForCommentsW
     message += "| | Category | Results |\n";
     message += "| --- |--- | --- |\n";
     let severityCounters = results['severity_counters']
+    console.log("Severity:", severity);
     for (let severity of severityOrder) {
         if (severity in severityCounters) {
+            console.log("Severity counters:", severityCounters[severity.toUpperCase()]);
+            console.log("Severity icon for", severity, ":", severityIcons[severity]);
             message += `| ![${severity}](${severityIcons[severity]}) | ${severity.toUpperCase()} | ${severityCounters[severity.toUpperCase()]} |\n`;
+        }
+        else {
+            console.log("Severity", severity, "not found in severityCounters.");
         }
     }
     message += `| ![TOTAL](${emptyIcon}) | TOTAL | ${results['total_counter']} |`;
