@@ -33,6 +33,7 @@ function createComment(results, withQueries = false, excludedColumnsForCommentsW
         }
         else {
             console.log("Severity", severity, "not found in severityCounters.");
+            message += `| ![${severity}](${severityIcons[severity]}) | ${severity.toUpperCase()} | 0 |\n`;
         }
     }
     message += `| ![TOTAL](${emptyIcon}) | TOTAL | ${results['total_counter']} |`;
