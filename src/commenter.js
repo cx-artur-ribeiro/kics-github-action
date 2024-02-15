@@ -7,7 +7,7 @@ const fs = require('fs');
 const dirname = __dirname;
 
 // Construct the path to the image file
-const criticalImagePath = path.join(dirname, '../../images/Critical.png');
+const criticalImagePath = path.join(__dirname, '..', '..', 'images', 'Critical.png');
 console.log("Critical image path:", criticalImagePath);
 
 // Check if the image file exists
