@@ -19,7 +19,7 @@ if (fs.existsSync(criticalImagePath)) {
 const kicsLogo = "https://user-images.githubusercontent.com/111127232/203838108-ad537fea-4573-495a-9619-18500ee81dd9.png"
 const severityOrder = ["CRITICAL","HIGH", "MEDIUM", "LOW", "INFO", "TRACE"];
 const severityIcons = {
-    "CRITICAL": "![CRITICAL](https://github.com/ArturRibeiro-CX/kics-github-action/raw/master/images/Critical.png)",
+    "CRITICAL": `![CRITICAL](${criticalImagePath})`,
     "HIGH": "https://user-images.githubusercontent.com/23239410/92157087-97285600-ee32-11ea-988f-0aca12c4c126.png",
     "MEDIUM": "https://user-images.githubusercontent.com/23239410/92157093-98598300-ee32-11ea-83d7-af52251a011b.png",
     "LOW": "https://user-images.githubusercontent.com/23239410/92157091-98598300-ee32-11ea-8498-19bd7d62019b.png",
@@ -40,14 +40,10 @@ function createComment(results, withQueries = false, excludedColumnsForCommentsW
     message += "| --- |--- | --- |\n";
     let severityCounters = results['severity_counters']
     for (let severity of severityOrder) {
-        console.log("Severity:", severity);
         if (severity in severityCounters) {
-            console.log("Severity counters:", severityCounters[severity.toUpperCase()]);
-            console.log("Severity icon for", severity, ":", severityIcons[severity]);
-            message += `| ![${severity}](${severityIcons[severity]}) | ${severity.toUpperCase()} | ${severityCounters[severity.toUpperCase()]} |\n`;
+           message += `| ![${severity}](${severityIcons[severity]}) | ${severity.toUpperCase()} | ${severityCounters[severity.toUpperCase()]} |\n`;
         }
         else {
-            console.log("Severity", severity, "not found in severityCounters.");
             message += `| ![${severity}](${severityIcons[severity]}) | ${severity.toUpperCase()} | 0 |\n`;
         }
     }
