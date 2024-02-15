@@ -19,7 +19,7 @@ if (fs.existsSync(criticalImagePath)) {
 const kicsLogo = "https://user-images.githubusercontent.com/111127232/203838108-ad537fea-4573-495a-9619-18500ee81dd9.png"
 const severityOrder = ["CRITICAL","HIGH", "MEDIUM", "LOW", "INFO", "TRACE"];
 const severityIcons = {
-    "CRITICAL": `file://${criticalImagePath}`,
+    "CRITICAL": "https://github.com/ArturRibeiro-CX/kics-github-action/blob/master/images/Critical.png",
     "HIGH": "https://user-images.githubusercontent.com/23239410/92157087-97285600-ee32-11ea-988f-0aca12c4c126.png",
     "MEDIUM": "https://user-images.githubusercontent.com/23239410/92157093-98598300-ee32-11ea-83d7-af52251a011b.png",
     "LOW": "https://user-images.githubusercontent.com/23239410/92157091-98598300-ee32-11ea-8498-19bd7d62019b.png",
