@@ -5,17 +5,6 @@ const fs = require('fs');
 
 // Get the directory name of the current module
 const dirname = __dirname;
-
-// Construct the path to the image file
-const criticalImagePath = path.join(__dirname, '..', '..', 'images', 'Critical.png');
-console.log("Critical image path:", criticalImagePath);
-
-// Check if the image file exists
-if (fs.existsSync(criticalImagePath)) {
-    console.log("Critical image exists.");
-} else {
-    console.log("Critical image does not exist.");
-}
 const kicsLogo = "https://user-images.githubusercontent.com/111127232/203838108-ad537fea-4573-495a-9619-18500ee81dd9.png"
 const severityOrder = ["CRITICAL","HIGH", "MEDIUM", "LOW", "INFO", "TRACE"];
 const severityIcons = {
