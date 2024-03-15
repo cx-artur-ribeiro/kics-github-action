@@ -32,10 +32,6 @@ function createComment(results, withQueries = false, excludedColumnsForCommentsW
         if (severity in severityCounters) {
            message += `| ![${severity}](${severityIcons[severity]}) | ${severity.toUpperCase()} | ${severityCounters[severity.toUpperCase()]} |\n`;
         }
-        else {
-            const imageTag = `<img src="${severityIcons[severity]}" alt="${severity}" width="25">`;
-            message += `| ${imageTag} | ${severity.toUpperCase()} | 0 |\n`;
-        }
     }
     message += `| ![TOTAL](${emptyIcon}) | TOTAL | ${results['total_counter']} |`;
 
