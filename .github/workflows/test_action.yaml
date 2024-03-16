@@ -9,7 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: run kics Scan
-      uses: ArturRibeiro-CX/kics-GH1302@newRelease
+      uses: ArturRibeiro-CX/kics-GH1302@new2
       with:
         path: test/samples/positive1.tf,test/samples/positive2.tf
         token: ${{ secrets.GITHUB_TOKEN }}
