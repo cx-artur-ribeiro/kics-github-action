@@ -1,4 +1,4 @@
-FROM arturribeirocx/kics:newRelease
+FROM arturribeirocx/kics-gh1302:new2
 
 COPY ./entrypoint.sh /entrypoint.sh
 
