@@ -3,6 +3,8 @@ name: Publish kics GitHub Action
 # Run this workflow on Tags matching v* pattern and publish a new release
 on:
   push:
+    tags:
+      - 'v*'
 
 jobs:
   publish:
