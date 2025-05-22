@@ -1,14 +1,10 @@
-const moment = require('moment');
+const moment = require('moment')
 const { summary } = require('@actions/core/lib/summary');
-const path = require('path');
-const fs = require('fs');
 
-// Get the directory name of the current module
-const dirname = __dirname;
 const kicsLogo = "https://user-images.githubusercontent.com/111127232/203838108-ad537fea-4573-495a-9619-18500ee81dd9.png"
 const severityOrder = ["CRITICAL","HIGH", "MEDIUM", "LOW", "INFO", "TRACE"];
 const severityIcons = {
-    "CRITICAL": "https://raw.githubusercontent.com/ArturRibeiro-CX/kics-github-action/master/images/Critical.png",
+    "CRITICAL": "https://raw.githubusercontent.com/Checkmarx/kics-github-action/88fa5c6bfb020c2ad298af00c4cd5b8dfbced92d/images/Critical.png",
     "HIGH": "https://user-images.githubusercontent.com/23239410/92157087-97285600-ee32-11ea-988f-0aca12c4c126.png",
     "MEDIUM": "https://user-images.githubusercontent.com/23239410/92157093-98598300-ee32-11ea-83d7-af52251a011b.png",
     "LOW": "https://user-images.githubusercontent.com/23239410/92157091-98598300-ee32-11ea-8498-19bd7d62019b.png",
@@ -30,7 +26,7 @@ function createComment(results, withQueries = false, excludedColumnsForCommentsW
     let severityCounters = results['severity_counters']
     for (let severity of severityOrder) {
         if (severity in severityCounters) {
-           message += `| ![${severity}](${severityIcons[severity]}) | ${severity.toUpperCase()} | ${severityCounters[severity.toUpperCase()]} |\n`;
+            message += `| ![${severity}](${severityIcons[severity]}) | ${severity.toUpperCase()} | ${severityCounters[severity.toUpperCase()]} |\n`;
         }
     }
     message += `| ![TOTAL](${emptyIcon}) | TOTAL | ${results['total_counter']} |`;
