@@ -1,17 +1,12 @@
 name: Publish kics GitHub Action
 
 # Run this workflow on Tags matching v* pattern and publish a new release
-on:
-  push:
-    tags:
-      - 'v*'
-
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - uses: haya14busa/action-update-semver@v1
+    - uses: haya14busa/action-update-semver@v1.1.4
       with:
         major_version_tag_only: true
     - name: Create a Release
