@@ -1,4 +1,4 @@
-FROM hiro12cx/kics_image:v2.1.9_hotfix_004 as kics-env
+FROM hiro12cx/kics_image:v2.1.10 as kics-env
  
 FROM cgr.dev/chainguard/wolfi-base:latest
  
